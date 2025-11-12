@@ -1,25 +1,23 @@
-.style{
-    font-family: Ubuntu;
-    color: #FFFFFF;
-font-weight: 200;
-font-style: Regular;
-font-size: 25px;
-/* leading-trim: NONE; */
-line-height: 100%;
-letter-spacing: 0%;
+.style {
+  font-family: Ubuntu;
+  color: #FFFFFF;
+  font-weight: 200;
+  font-style: Regular;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
 
+.style span {
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #9DFF5B;
 }
-.style span{
-    font-family: Ubuntu;
-font-weight: 700;
-font-style: Bold;
-font-size: 26px;
-leading-trim: NONE;
-line-height: 100%;
-letter-spacing: 0%;
-color:#9DFF5B;
-}
-/* WalletBalance.css */
+
 .expense-container {
   display: flex;
   justify-content: center;
@@ -48,4 +46,35 @@ color:#9DFF5B;
   width: 45%;
   background-color: #B5DC52;
   border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 767px) {
+  .expense-container {
+    width: 100%;   /* full width on mobile */
+    height: auto;  /* let content define height */
+    margin-bottom: 1rem;
+  }
+
+  .expense-card {
+    padding: 1rem;
+    gap: 15px;
+  }
+
+  .style {
+    font-size: 20px; /* slightly smaller text */
+  }
+
+  .style span {
+    font-size: 21px;
+  }
+
+  .add-income-btn {
+    width: 60%;   /* bigger button for touch */
+    height: 42px;
+    font-size: 0.95rem;
+  }
 }
