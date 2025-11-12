@@ -5,8 +5,6 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  Legend,
-  CartesianGrid
 } from "recharts";
 import styles from "./ExpenseBarChart.module.css";
 
