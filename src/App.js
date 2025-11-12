@@ -90,11 +90,16 @@ function App() {
             handleDelete={handleDelete}
           />
           <ExpensePie expenseList={expenseList} />
+          
         </div>
         <div style={{ display: "flex", gap: "10px" }}>
           <div style={{width:"50%"}}>
-            <strong>Recent Transactions</strong>
-            <div style={{ backgroundColor: "white", boxSizing: "border-box", width: "100%", padding: "1rem" }}>
+            <strong style={{
+               fontSize: "28px",
+  color: "#fff",
+  marginBottom: "10px",
+            }}>Recent Transactions</strong>
+            <div style={{ backgroundColor: "white", boxSizing: "border-box", width: "100%", padding: "5px 20px", marginTop:"10px" }}>
               <ul style={{ listStyle: "none", padding: 0 }}>
                 {expenseList.map((expense, index) => (
                   <li key={index} style={{
@@ -124,7 +129,6 @@ function App() {
             </div>
           </div>
           <div style={{width:"50%"}}>
-            <strong style={{paddingLeft:"1rem"}}>Top Expenses</strong>
             <ExpenseBarChart expenseList={expenseList}/>
           </div>
         </div>

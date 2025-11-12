@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BarChart,
   Bar,
@@ -9,6 +8,7 @@ import {
   Legend,
   CartesianGrid
 } from "recharts";
+import styles from "./ExpenseBarChart.module.css";
 
 export default function ExpenseBarChart({ expenseList }) {
   const categoryTotals = expenseList.reduce((acc, expense) => {
@@ -16,23 +16,24 @@ export default function ExpenseBarChart({ expenseList }) {
     return acc;
   }, {});
 
-  const barData = Object.entries(categoryTotals).map(([category, amount]) => ({
-    category,
-    amount,
+  const formattedData = Object.entries(categoryTotals).map(([name, value]) => ({
+    name,
+    value,
   }));
 
   return (
-    <div style={{ width: "100%", height: 300 }}>
-      <ResponsiveContainer>
-        <BarChart data={barData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="category" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="amount" fill="#8884d8" />
-        </BarChart>
-      </ResponsiveContainer>
+    <div className={styles.expenseChart}>
+      <h2>Top Expenses</h2>
+      <div className={styles.barWrapper}>
+        <ResponsiveContainer width="100%" height={280}>
+          <BarChart data={formattedData} layout="vertical">
+            <XAxis type="number" axisLine={false} />
+            <YAxis type="category" dataKey="name" width={100} axisLine={false} />
+            <Tooltip />
+            <Bar dataKey="value" fill="#8884d8" barSize={25} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
