@@ -56,10 +56,7 @@ function App() {
     return acc;
   }, {});
 
-  const pieData = Object.entries(categoryTotals).map(([name, value]) => ({
-    name,
-    value,
-  }));
+
 
   const getCategoryIcon = (category) => {
     switch (category) {
@@ -80,10 +77,7 @@ function App() {
     acc[expense.category] = (acc[expense.category] || 0) + expense.amount;
     return acc;
   }, {});
-  const barData = Object.entries(categoryTotal).map(([category, amount]) => ({
-    category,
-    amount,
-  }));
+
 
   return (
     <>

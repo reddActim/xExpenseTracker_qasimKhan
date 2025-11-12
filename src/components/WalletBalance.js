@@ -1,5 +1,4 @@
 import React from "react";
-import { BsCurrencyRupee } from "react-icons/bs";
 import './WalletBalance.css'
 import Modal from "./Modal";
 import BalanceForm from "./BalanceForm";
