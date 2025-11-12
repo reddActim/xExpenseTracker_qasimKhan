@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-import Modal from './components/Modal'
 import WalletBalance from './components/WalletBalance';
 import Expenses from './components/Expenses';
 import ExpensePie from './components/ExpensePie';
