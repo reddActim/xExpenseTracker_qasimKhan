@@ -51,12 +51,6 @@ function App() {
     localStorage.setItem("balance", balance);
   }, [balance]);
 
-  const categoryTotals = expenseList.reduce((acc, expense) => {
-    acc[expense.category] = (acc[expense.category] || 0) + expense.amount;
-    return acc;
-  }, {});
-
-
 
   const getCategoryIcon = (category) => {
     switch (category) {
@@ -73,10 +67,6 @@ function App() {
     }
   };
 
-  const categoryTotal = expenseList.reduce((acc, expense) => {
-    acc[expense.category] = (acc[expense.category] || 0) + expense.amount;
-    return acc;
-  }, {});
 
 
   return (
