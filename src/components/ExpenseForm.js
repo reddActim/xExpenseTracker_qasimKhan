@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "./ExpenseForm.module.css";
 
 export default function ExpenseForm({ onSubmit, initialData }) {
   const [formData, setFormData] = useState({
@@ -39,17 +40,37 @@ export default function ExpenseForm({ onSubmit, initialData }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
-      <input name="amount" type="number" value={formData.amount} onChange={handleChange} placeholder="Amount" />
-      <select name="category" value={formData.category} onChange={handleChange}>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <input
+        name="title"
+        value={formData.title}
+        onChange={handleChange}
+        placeholder="Title"
+      />
+      <input
+        name="amount"
+        type="number"
+        value={formData.amount}
+        onChange={handleChange}
+        placeholder="Amount"
+      />
+      <select
+        name="category"
+        value={formData.category}
+        onChange={handleChange}
+      >
         <option value="">Select Category</option>
         <option value="Food">Food</option>
         <option value="Travel">Travel</option>
         <option value="Shopping">Shopping</option>
         <option value="Bills">Bills</option>
       </select>
-      <input name="date" type="date" value={formData.date} onChange={handleChange} />
+      <input
+        name="date"
+        type="date"
+        value={formData.date}
+        onChange={handleChange}
+      />
       <button type="submit">Add Expense</button>
     </form>
   );

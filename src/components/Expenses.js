@@ -54,6 +54,7 @@ export default function Expenses({
         <ExpenseForm
           onSubmit={handleExpenseSubmit}
           initialData={editIndex !== null && expenseList[editIndex] ? expenseList[editIndex] : null}
+          
         />
       </Modal>
     </>

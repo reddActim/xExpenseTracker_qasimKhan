@@ -1,0 +1,62 @@
+.balanceForm {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 16px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.balanceForm label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.balanceForm input {
+  background: #FBFBFB;
+  border: none;
+  outline: none;
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 12px;
+  border-radius: 15px;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.buttonGroup button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buttonGroup .addBtn {
+  background-color: #FFD700; 
+  color: #333;
+}
+
+.buttonGroup .addBtn:hover {
+  background-color: #e6c200;
+}
+
+.buttonGroup .cancelBtn {
+  background-color: #ccc; 
+  color: #333;
+}
+
+.buttonGroup .cancelBtn:hover {
+  background-color: #b3b3b3;
+}

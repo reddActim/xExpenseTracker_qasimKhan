@@ -21,7 +21,7 @@ export default function WalletBalance({ balance, handleBalance, showBalanceModal
                 </div>
             </div>
              <Modal isOpen={showBalanceModal} onClose={() => setShowBalanceModal(false)}>
-        <BalanceForm onSubmit={(event)=>handleBalanceSubmit(event)} />
+        <BalanceForm onSubmit={(event)=>handleBalanceSubmit(event)} onCancel={() => setShowBalanceModal(false)}/>
       </Modal>
         </>
     );

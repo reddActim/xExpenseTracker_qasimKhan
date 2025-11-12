@@ -1,0 +1,46 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form input,
+.form select {
+  background: #fbfbfb;
+  border: 0;
+  outline: 0;
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 12px;
+  border-radius: 15px;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+.form button {
+  grid-column: span 2; /* button takes full width */
+  background: #8884d8;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #6c5fc7;
+}
+
+@media (max-width: 767px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form button {
+    grid-column: span 1; /* button fits single column on mobile */
+  }
+}

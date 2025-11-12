@@ -3,7 +3,6 @@ import {
   Bar,
   XAxis,
   YAxis,
-  Tooltip,
   ResponsiveContainer,
 } from "recharts";
 import styles from "./ExpenseBarChart.module.css";
@@ -27,7 +26,6 @@ export default function ExpenseBarChart({ expenseList }) {
           <BarChart data={formattedData} layout="vertical">
             <XAxis type="number" axisLine={false} />
             <YAxis type="category" dataKey="name" width={100} axisLine={false} />
-            <Tooltip />
             <Bar dataKey="value" fill="#8884d8" barSize={25} />
           </BarChart>
         </ResponsiveContainer>
