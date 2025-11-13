@@ -15,15 +15,23 @@ export default function ExpensePie({ expenseList }) {
     fill: COLORS[index % COLORS.length],
   }));
 
+  // detect screen width
+  const isMobile = window.innerWidth <= 767;
+
   return (
-    <div style={{ width: "50%", height: 300 }}>
-      <ResponsiveContainer>
+    <div
+      style={{
+        width: isMobile ? "100%" : "50%",
+        height: isMobile ? 250 : 300,
+      }}
+    >
+      <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             data={pieData}
             dataKey="value"
             nameKey="name"
-            outerRadius={100}
+            outerRadius={isMobile ? "70%" : "80%"}
             label
           >
             {pieData.map((entry, index) => (
