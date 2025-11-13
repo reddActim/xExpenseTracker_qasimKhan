@@ -48,7 +48,7 @@ export default function ExpenseForm({ onSubmit, initialData }) {
         placeholder="Title"
       />
       <input
-        name="amount"
+        name="price"
         type="number"
         value={formData.amount}
         onChange={handleChange}

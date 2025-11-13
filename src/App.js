@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="header">Expense tracker</h1>
+      <h1 className="header">Expense Tracker</h1>
 
       <div className="top-section">
         <WalletBalance
@@ -100,7 +100,7 @@ function App() {
 
       <div className="bottom-section">
         <div className="left-column">
-          <strong className="transactions-title">Recent Transactions</strong>
+          <strong className="transactions-title">Transactions</strong>
           <div className="transaction-list">
             <ul style={{ listStyle: "none", padding: 0 }}>
               {expenseList.map((expense, index) => (
