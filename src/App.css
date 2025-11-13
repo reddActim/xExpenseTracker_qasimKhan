@@ -23,6 +23,7 @@ boxSizing: "border-box";
 
 .header {
   color: #FFFFFF;
+  margin-bottom: 0.5rem;
 }
 
 /* Top section: Wallet + Expenses + Pie */
@@ -34,7 +35,8 @@ boxSizing: "border-box";
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  padding: 0px 1.5rem;
+  padding: 0.5rem 1.5rem;
+
 }
 
 /* Bottom section: Transactions + Bar Chart */
