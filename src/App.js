@@ -4,6 +4,7 @@ import WalletBalance from './components/WalletBalance';
 import Expenses from './components/Expenses';
 import ExpensePie from './components/ExpensePie';
 import ExpenseBarChart from './components/ExpenseBarChart';
+import { FaUtensils, FaPlane, FaFilm, FaEdit, FaTrash, FaFileInvoiceDollar } from "react-icons/fa";
 
 function App() {
   const [balance, setBalance] = useState(() => {
@@ -52,24 +53,23 @@ function App() {
   }, [balance]);
 
 
+
   const getCategoryIcon = (category) => {
     switch (category) {
       case "Food":
-        return "🍔";
+        return <FaUtensils />;
       case "Travel":
-        return "✈️";
-      case "Bills":
-        return "💡";
-      case "Shopping":
-        return "🛍️";
+        return <FaPlane />;
+      case "Entertainment":
+        return <FaFilm />;
       default:
-        return "💸";
+        return <FaFileInvoiceDollar />;
     }
   };
 
 
 
-  
+
 
   return (
     <div className="container">
@@ -102,7 +102,7 @@ function App() {
         <div className="left-column">
           <strong className="transactions-title">Transactions</strong>
           <div className="transaction-list">
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            {expenseList.length > 0 ? (<ul style={{ listStyle: "none", padding: 0 }}>
               {expenseList.map((expense, index) => (
                 <li key={index} className="transaction-item">
                   <div className="transaction-details">
@@ -116,15 +116,19 @@ function App() {
                   </div>
                   <div className="transaction-actions">
                     <div className="transaction-amount">₹{expense.amount}</div>
-                    <button onClick={() => handleEdit(index)}>✏️</button>
-                    <button onClick={() => handleDelete(index)}>🗑️</button>
+                    <button onClick={() => handleEdit(index)} className="icon-btn">
+                      <FaEdit />
+                    </button>
+                    <button onClick={() => handleDelete(index)} className="icon-btn">
+                      <FaTrash />
+                    </button>
                   </div>
                 </li>
               ))}
-            </ul>
+            </ul>) : <p style={{ padding: "1.5rem 1rem" }}>No transactions!</p>}
+
           </div>
         </div>
-
         <div className="right-column">
           <ExpenseBarChart expenseList={expenseList} />
         </div>
