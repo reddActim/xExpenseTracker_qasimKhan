@@ -4,7 +4,7 @@ import styles from "./ExpenseForm.module.css";
 export default function ExpenseForm({ onSubmit, initialData }) {
   const [formData, setFormData] = useState({
     title: "",
-    amount: "",
+    price: "",
     category: "",
     date: ""
   });
@@ -13,7 +13,7 @@ export default function ExpenseForm({ onSubmit, initialData }) {
     if (initialData) {
       setFormData({
         title: initialData.title,
-        amount: initialData.amount,
+        price: initialData.price,
         category: initialData.category,
         date: initialData.date
       });
@@ -24,19 +24,20 @@ export default function ExpenseForm({ onSubmit, initialData }) {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "amount" ? Number(value) : value
+      [name]: name === "price" ? Number(value) : value
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { title, amount, category, date } = formData;
-    if (!title || !amount || !category || !date) {
+    const { title, price, category, date } = formData;
+    if (!title || !price || !category || !date) {
       alert("Please fill all fields");
       return;
     }
-    onSubmit(formData);
-    setFormData({ title: "", amount: "", category: "", date: "" });
+    // passing `price` as `amount` if the rest of your app expects it
+    onSubmit({ ...formData, amount: formData.price });
+    setFormData({ title: "", price: "", category: "", date: "" });
   };
 
   return (
@@ -50,9 +51,9 @@ export default function ExpenseForm({ onSubmit, initialData }) {
       <input
         name="price"
         type="number"
-        value={formData.amount}
+        value={formData.price}
         onChange={handleChange}
-        placeholder="Amount"
+        placeholder="Expense Amount"  
       />
       <select
         name="category"
