@@ -63,6 +63,18 @@ boxSizing: "border-box";
   width: 100%;
   padding: 5px 20px;
   margin-top: 10px;
+  max-height: 290px;   /* adjust height as needed */
+  overflow-y: auto;    /* enables vertical scrolling */
+  padding-right: 8px;  /* space for scrollbar */
+  border: 1px solid #eee; /* optional: visual boundary */
+  border-radius: 10px;
+overflow: hidden; 
+}
+.transaction-list ul {
+  max-height: 290px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0 8px 0 0; /* space for scrollbar */
 }
 
 .transaction-item {
@@ -72,6 +84,11 @@ boxSizing: "border-box";
   border-bottom: 1px solid #ddd;
   padding: 0.75rem 0;
 }
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
 
 .transaction-details {
   display: flex;
